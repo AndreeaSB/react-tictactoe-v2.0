@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import Cookies from "universal-cookie";
 
-function SignUp() {
+function SignUp({setIsAuth}) {
 
     const URL = 'http://localhost:3000'
     const cookies = new Cookies()
@@ -14,13 +14,14 @@ function SignUp() {
         
         axios.post(`${URL}/signup`, user).then( (res) => {
             console.log(res.data)
-            const {token, userId, firstName, lastName, username, hashPassword} = res.data
+            const {token, userId, firstName, lastName, username, hashedPassword} = res.data
             cookies.set('token', token)
             cookies.set('firstName', firstName)
             cookies.set('userId', userId)
             cookies.set('lastName', lastName)
             cookies.set('username', username)
-            cookies.set('hashPassword', hashPassword)
+            cookies.set('hashedPassword', hashedPassword)
+            setIsAuth(true)
         })
     }
 
