@@ -13,7 +13,7 @@ app.use(cors());
 const PORT = 3000;
 const api_key = "rsk7x3wune53";
 const api_secret =
-  "shh"; //aparently you should not post this secrets on github
+  "shhite7gp4ngsq9y73sr9mp9a9p8a8bmq4e5ek4sdgaeadcrkrszaqy87jsf26nd9cqmf";
 const serverClient = new StreamChat.getInstance(api_key, api_secret);
 
 app.post("/signup", async (req, res) => {

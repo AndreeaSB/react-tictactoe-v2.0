@@ -40,7 +40,6 @@ function App() {
         token
       )
       .then((user) => {
-        console.log(user);
         setIsAuth(true);
       });
   }
